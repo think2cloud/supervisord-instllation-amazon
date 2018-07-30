@@ -77,7 +77,7 @@ def hello_world():
 ```
 [program:cladoapp]
 directory=/var/flask
-command=gunicorn cladoapp:app -b 0.0.0.0:8000
+command=gunicorn cladoapp:app -b 0.0.0.0:8080
 autostart=true
 autorestart=true
 stderr_logfile=/var/log/cladoapp/cladoapp.err.log
@@ -99,4 +99,10 @@ stdout_logfile=/var/log/cladoapp/cladoapp.out.log                               
 ```
 [clado]# supervisorctl 
 cladoapp         RUNNING   pid 360, uptime 0:00:02
+```
+
+### Accessing Application
+
+```
+http://ip-of-the-instance:8080
 ```
